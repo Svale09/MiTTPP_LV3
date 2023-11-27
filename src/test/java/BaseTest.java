@@ -5,7 +5,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -31,7 +30,7 @@ public class BaseTest extends AppiumUtilities{
         options.setDeviceName(properties.getProperty("deviceName"))
                 .setPlatformVersion(properties.getProperty("platformVersion"))
                 .setAutomationName("UIAutomator2")
-                .setApp("");
+                .setApp("/Users/ivansvalina/Documents/Faks/MiTTPP/MiTTPP_LV3/ApiDemos-debug.apk");
 
         driver = new AndroidDriver(service.getUrl(), options);
     }
