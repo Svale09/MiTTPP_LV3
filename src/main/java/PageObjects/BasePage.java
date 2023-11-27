@@ -29,4 +29,7 @@ public class BasePage extends AppiumUtilities {
         waitForElementToAppearByElement(element, driver);
         return element.getText();
     }
+    public void TapReturnButton(){
+        driver.navigate().back();
+    }
 }

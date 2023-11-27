@@ -1,5 +1,6 @@
 package org.example;
 
+import PageObjects.LandingPage;
 import Utilities.AppiumUtilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -14,6 +15,7 @@ import java.util.Properties;
 public class BaseTest extends AppiumUtilities {
     private AppiumDriverLocalService service;
     public AndroidDriver driver;
+    public LandingPage landingPage;
 
     @BeforeClass(alwaysRun = true)
     public void CongifureAppium() throws IOException {
@@ -36,6 +38,7 @@ public class BaseTest extends AppiumUtilities {
                 .setApp(properties.getProperty("appPath"));
 
         driver = new AndroidDriver(service.getUrl(), options);
+        landingPage = new LandingPage(driver);
     }
 
     @AfterClass(alwaysRun = true)

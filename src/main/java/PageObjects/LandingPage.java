@@ -18,9 +18,12 @@ public class LandingPage extends BasePage{
     @AndroidFindBy(accessibility = "Text")
     private WebElement TextOption;
 
-    public BasePage TapTextOption(){
+    public TextPage TapTextOption(){
         Tap(TextOption);
-//TODO add matching POM for the return value
-        return new BasePage(driver);
+        return new TextPage(driver);
+    }
+
+    public Boolean IsTextVisible(){
+        return TextOption.isDisplayed();
     }
 }
