@@ -33,7 +33,7 @@ public class BaseTest extends AppiumUtilities {
         options.setDeviceName(properties.getProperty("deviceName"))
                 .setPlatformVersion(properties.getProperty("platformVersion"))
                 .setAutomationName("UIAutomator2")
-                .setApp("/Users/ivansvalina/Documents/Faks/MiTTPP/MiTTPP_LV3/ApiDemos-debug.apk");
+                .setApp(properties.getProperty("appPath"));
 
         driver = new AndroidDriver(service.getUrl(), options);
     }
